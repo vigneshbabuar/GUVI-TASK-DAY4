@@ -1,0 +1,56 @@
+
+1. How to compare two json have the same properties without order in javascript:
+--------------------------------------------------------------------------------
+a. let obj1 = {name: "Person 1", age:5};
+b. let obj2 = {age:5, name: "Person 1"};
+
+
+const object1 = {
+  name: "Person 1",
+  age: 5,
+};
+
+const object2 = {
+  age: 5,
+  name: "Person 1",
+};
+
+console.log(JSON.stringify(object1) === JSON.stringify(object2));
+
+
+2. Use the rest countries' API URL -> https://restcountries.com/v3.1/all and display all the country flags in the console.
+
+import fetch from "node-fetch";
+let fetchRes = fetch("https://restcountries.com/v3.1/all?fields=flags");
+fetchRes
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });
+
+3. Use the same rest countries and print all countries names, regions, sub-region and populations
+
+import fetch from "node-fetch";
+let fetchRes = fetch("https://restcountries.com/v3.1/all?fields=population");
+fetchRes
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });
+
+import fetch from "node-fetch";
+let fetchRes = fetch("https://restcountries.com/v3.1/all?fields=region");
+fetchRes
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });
+
+import fetch from "node-fetch";
+let fetchRes = fetch("https://restcountries.com/v3.1/all?fields=subregion");
+fetchRes
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });
+

@@ -1,0 +1,314 @@
+/*
+16. You are given with Principle amount($), Interest Rate(%) and Time (years) in that order. Find Simple Interest.
+
+Print the output up to two decimal places (Round-off if necessary).
+
+(S.I. = P*T*R/100)
+
+Input Description:
+Three values are given to you as the input. these values correspond to Principle amount, Interest Rate and Time in that particular order.
+
+Output Description:
+Find the Simple interest and print it up to two decimal places. Round off if required.
+
+Sample Input :
+1000 2 5
+Sample Output :
+100.00
+*/
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+
+  var myPrinciple = userInput[0].split(" ")[0];
+  var myInterest = userInput[0].split(" ")[1];
+  var myTime = userInput[0].split(" ")[2];
+
+  var myOutput = (myPrinciple * myInterest * myTime) / 100;
+  console.log(myOutput.toFixed(2));
+
+  //end-here
+});
+
+
+/*
+17. Write a code to get an integer N and print the digits of the integer.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the digits of the integer in a single line separated by space,
+
+Sample Input :
+348
+Sample Output :
+3 4 8
+*/
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+
+  var myInput = userInput[0];
+  console.log(myInput.split("").join(" "));
+
+  //end-here
+});
+
+
+/*
+18. You are provided with a number, "N". Find its factorial.
+
+Input Description:
+A positive integer is provided as an input.
+
+Output Description:
+Print the factorial of the integer.
+
+Sample Input :
+2
+Sample Output :
+2
+*/
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+
+  var myInput = userInput[0];
+  var myResult = 1;
+  for (i = myInput; i >= 1; i--) {
+    myResult = myResult * i;
+  }
+
+  console.log(myResult);
+
+  //end-here
+});
+
+
+/*
+24. Write a code to get an integer N and print the sum of  values from 1 to N.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the sum of values from 1 to N.
+
+Sample Input :
+10
+Sample Output :
+55
+*/
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+
+  var myInput = parseInt(userInput[0]);
+  var myResult = parseInt(0);
+  for (i = myInput; i >= 1; i--) {
+    myResult = myResult + i;
+  }
+
+  console.log(myResult);
+
+  //end-here
+});
+
+
+/*
+26. Let "A" be a year, write a program to check whether this year is a leap year or not.
+
+Print "Y" if its a leap year and "N" if its a common year.
+
+Input Description:
+A Year is the input in the form of a positive integer.
+
+Output Description:
+Print "Y" if its a leap year and "N" if its a common year.
+
+Sample Input :
+2020
+Sample Output :
+Y
+*/
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+
+  var myInput = parseInt(userInput[0]);
+  console.log(myInput);
+
+  if (myInput % 400 == 0) {
+    console.log("Y");
+  } else if (myInput % 4 == 0 && !(myInput % 100 == 0)) {
+    console.log("Y");
+  } else {
+    console.log("N");
+  }
+
+  //end-here
+});
+
+
+/*
+28. Write a code get an integer number as input and print the odd and even digits of the number separately.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the even and odd integers of the integer in a separate line.
+
+Sample Input :
+1234
+Sample Output :
+2 4
+1 3
+*/
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+
+  var myInput = userInput[0];
+  var myEven = [];
+  var myOdd = [];
+  for (i = 0; i < myInput.length; i++) {
+    if (myInput[i] % 2 == 0) {
+      myEven.push(myInput[i]);
+    } else {
+      myOdd.push(myInput[i]);
+    }
+  }
+  console.log(myEven.sort().join(" "));
+  console.log(myOdd.sort().join(" "));
+
+  //end-here
+});
+
+
+/*
+29. Write a code get an integer number as input and print the sum of the digits.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the sum of the digits of the integer.
+
+Sample Input :
+124
+Sample Output :
+7
+*/
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+
+  var myInput = userInput[0];
+  var myResult = 0;
+  for (i = 0; i < myInput.length; i++) {
+    myResult = parseInt(myResult) + parseInt(myInput[i]);
+  }
+  console.log(myResult);
+});
+
+
